@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ /*code pour la police*/ <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <title>Artisan237</title>
+
+  <style>
+    /* --------------------- GENERAL --------------------- */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      position: relative;
+      background-image: url(./camer.jpg); /* dégradé du bas vers le haut */ 
+      background-repeat: no-repeat; /* Pour évter la répétition de l'image*/
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+
+    /* ---------------------linear-gradient(to top, #ffc0cb, #ff0055, #000000); TITRE PRINCIPAL --------------------- */
+    .title {
+      text-align: center;
+      font-size: 3.5em;
+      margin-top: 40px;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* --------------------- ONGLET DE NAVIGATION --------------------- */
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 40px 100px;
+      margin-top: 60px; /* espacement depuis le haut */
+    }
+
+    .nav-buttons a {
+      width: 200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(235, 36, 36);
+      color: rgb(252, 248, 234);
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: transform 0.3s, background-color 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-buttons a:hover {
+      transform: scale(1.05);
+      background-color: #a7681a; /* violet foncé */
+    }
+
+    /* --------------------- TEXTE D'ACCUEIL EN BAS --------------------- */
+    .welcome-text {
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1em;
+      color: rgb(246, 242, 236);
+      padding: 0 20px;
+      line-height: 1.6;
+      z-index: 2;
+    }
+
+    /* --------------------- LOSANGES ANIMES --------------------- */
+    .diamond {
+      position: absolute;
+      border-radius: 4px;
+      transform: rotate(45deg);
+      animation: float 4s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .diamond.top-right {
+      background: linear-gradient(135deg, white, pink);
+    }
+
+    .diamond.bottom-left {
+      background: linear-gradient(135deg, black, pink);
+    }
+
+    .size-sm { width: 15px; height: 15px; }
+    .size-md { width: 20px; height: 20px; }
+    .size-lg { width: 25px; height: 25px; }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); }
+      50% { transform: translateY(-8px) rotate(45deg); }
+      100% { transform: translateY(0) rotate(45deg); }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Titre principal de la plateforme -->
+  <div class="title">Artisan237</div>
+
+  <!-- Conteneur des deux grands boutons -->
+  <div class="nav-buttons">
+    <a href="page2.html">Visiteur / Client</a>
+    <a href="#">Connexion</a>
+  </div>
+
+  <!-- Texte d'accueil en bas de la page -->
+  <div class="welcome-text">
+    <p>
+      Bienvenue sur <strong>Artisan237</strong><br>
+      Plateforme de promotion de l’artisanat camerounais à travers la publication de produits par les artisans,<br>
+      et la possibilité à vous, chers clients, de contacter les artisans pour acquérir un article.
+    </p>
+  </div>
+
+  <!-- Losanges en haut à droite (effet dégradé blanc → rose) -->
+  <div class="diamond top-right size-sm" style="top: 30px; right: 40px;"></div>
+  <div class="diamond top-right size-md" style="top: 60px; right: 70px;"></div>
+  <div class="diamond top-right size-lg" style="top: 90px; right: 50px;"></div>
+  <div class="diamond top-right size-md" style="top: 120px; right: 90px;"></div>
+  <div class="diamond top-right size-sm" style="top: 150px; right: 60px;"></div>
+
+  <!-- Losanges en bas à gauche (effet dégradé noir → rose) -->
+  <div class="diamond bottom-left size-sm" style="bottom: 30px; left: 40px;"></div>
+  <div class="diamond bottom-left size-md" style="bottom: 60px; left: 70px;"></div>
+  <div class="diamond bottom-left size-lg" style="bottom: 90px; left: 50px;"></div>
+  <div class="diamond bottom-left size-md" style="bottom: 120px; left: 90px;"></div>
+  <div class="diamond bottom-left size-sm" style="bottom: 150px; left: 60px;"></div>
+
+  <!-- Décor abstrait en fond représentant l’artisanat -->
+  <div class="artisan-decor artisan1"></div>
+  <div class="artisan-decor artisan2"></div>
+</body>
+</html>
+

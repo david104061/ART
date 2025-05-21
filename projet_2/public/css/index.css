@@ -1,0 +1,866 @@
+@import url("globals.css");
+
+:root {
+    --fSize_header: 1.2rem;
+    --fSize_link_1: 1.1rem;
+    --fSize_link_2: 2.5rem;
+    --fSize_btn: 1rem;
+    --fSize_btn_2: 1.8rem;
+    --fSize_title_1: 4rem;
+    --fSize_title_3: 2rem;
+    --fSize_big_title: 3rem;
+
+    --linkColor_1: #1A1A1A;
+    --linkColor_2: #fff;
+    --btnColor_1: #fff;
+    --orangeColor: #ff5733;
+    --textColor_1: #fff;
+    --blueColor: #3366FF;
+    --hoverBtn: #FF8C66;
+    --grisColor: #F5F5F5;
+    --prodGrid_color: #FF8C66;
+}
+
+.hero {
+    display: flex; /* Active le flexbox */
+    justify-content: center; /* Centre les enfants verticalement */
+    align-items: center; /* Centre les enfants horizontalement */
+    height: 100vh;
+    background-image: url(../images/hero_backg.jpg); /* Chemin relatif de l'image */
+    background-repeat: no-repeat; /* pour éviter la répétition */
+    background-size: cover; /* Couvre toute la page */
+    background-position: center; /* Centre l'image */
+}
+
+.hero .texte {
+    color: var(--textColor_1);
+    text-align: center;
+}
+
+.hero .texte h1 {
+    font-weight: bolder;
+    font-size: var(--fSize_title_1);
+}
+
+.hero .texte h3 {
+    font-weight: bold;
+    font-size: var(--fSize_title_3);
+}
+
+.hero .texte button {
+    margin-top: 3%;
+    width: 300px;
+    height: 7vh;
+    border-radius: 25px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    font-size: var(--fSize_header);
+    color: var(--btnColor_1);
+    background-color: var(--orangeColor);
+    transition: all 0.5s ease-in-out;
+}
+
+.hero .texte button:hover {
+    transform: scale(1.1);
+    font-size: 1.3em;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Pour rendre responsive la partie principale. */
+@media (max-width: 480px) {
+    
+    .hero {
+        background-position: top center; /* Ajuster la position de l'image pour mieux l'afficher */
+        background-size: cover;
+        padding: 0 10px;
+    }
+
+    #texte h1 {
+        font-size: 2.5rem;
+        margin-bottom: 90px;
+        font-weight: bolder;
+        color: var(--grisColor);
+    }
+
+    #texte h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: var(--grisColor);
+    }
+
+    #texte button {
+        width: 100%;
+        padding: 12px 0;
+    }
+}
+
+@media (min-width: 481px) {
+    
+    .hero {
+        background-position: top center; /* Ajuster la position de l'image pour mieux l'afficher */
+        background-size: cover;
+        padding: 0 10px;
+    }
+
+    #texte h1 {
+        font-size: 3.5rem;
+        margin-bottom: 50px;
+        font-weight: bolder;
+        color: var(--grisColor);
+    }
+
+    #texte h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+        color: var(--grisColor);
+    }
+}
+
+/* Section pour le titre principal des produits */
+.product{
+    display: flex;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.product h1 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: clamp(120px, 30vw, 400px);
+    font-size: var(--fSize_big_title);
+    background: var(--blueColor);
+}
+
+
+/* Section Pour les meilleurs produits */
+
+.best-product {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    /* padding-right: clamp(1rem, 3vw, 2rem); */
+}
+
+.head-best_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.head-best_product h1 {
+    background: var(--orangeColor);
+    width: clamp(120px, 20vw, 500px);
+    padding: clamp(0.5rem, 1vw, 1rem);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.head-best_product .all-best-product {
+    cursor: pointer;
+    padding-right: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.head-best_product .all-best-product:hover {
+    text-decoration: underline;
+    transform: scale(1.02);
+}
+
+.slider-container {
+    width: 100%;
+    overflow-x: auto; /* Permet le défilement horizontal */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur Edge */
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none; /* Cache la scrollbar sur Chrome & Safari */
+}
+
+.products-slider {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); /* Espace entre les cartes */
+    padding: 1rem;
+    scroll-snap-type: x mandatory; /* Scroll fluide */  
+}
+
+.product-card {
+    flex: 0 0 clamp(200px, 18vw, 280px); /* Largeur ajustée */
+    background: white;
+    border-radius: 12px;
+    padding: clamp(0.55rem, 1vw, 1.5rem); /* Padding ajusté */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    scroll-snap-align: start; /* Alignement précis au scroll */
+}
+
+.product-card:hover {
+    transform: scale(1.1);
+}
+
+.images_and_favoris {
+    position: relative;
+    border-radius: 12px;
+}
+
+.images_and_favoris img {
+    width: 100%;
+    border-radius: 12px;
+    height: 35vh;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.images_and_favoris img:hover {
+    transform: scale(1.05);
+}
+
+.images_and_favoris p {
+    position: absolute;
+    top: 3%;
+    left: 80%;
+    background: white;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images_and_favoris p button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5em;
+    transition: all 0.5s ease-in-out;
+}
+
+.images_and_favoris i {
+    color: grey;
+}
+
+.images_and_favoris i:hover {
+    color: royalblue;
+}
+
+.product-details {
+    margin-top: 10px;
+}
+
+.product-details h3 {
+    margin-bottom: 3px;
+}
+
+.product-details p {
+    font-size: 0.8em;
+}
+
+.add-product {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.add-product button {
+    width: 55%;
+    height: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: var(--blueColor);
+    color: var(--btnColor_1);
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+}
+
+.add-product button:hover{
+    transform: scale(1.05);
+}
+
+/* Section pour les nouveaux produits */
+.product{
+    display: flex;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.product h1 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: clamp(120px, 30vw, 400px);
+    font-size: var(--fSize_big_title);
+    background: var(--blueColor);
+}
+
+.new-product {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-top: clamp(1rem, 3vw, 2rem);
+    /* padding-right: clamp(1rem, 3vw, 2rem); */
+}
+
+.head-new_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.head-new_product h1 {
+    background: var(--orangeColor);
+    width: clamp(120px, 20vw, 500px);
+    padding: clamp(0.5rem, 1vw, 1rem);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.head-new_product .all-new-product {
+    cursor: pointer;
+    padding-right: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.head-new_product .all-new-product:hover {
+    text-decoration: underline;
+    transform: scale(1.02);
+}
+
+.slider-container_new {
+    width: 100%;
+    overflow-x: auto; /* Permet le défilement horizontal */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur Edge */
+}
+
+.slider-container_new::-webkit-scrollbar {
+    display: none; /* Cache la scrollbar sur Chrome & Safari */
+}
+
+.products-slider_new {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); /* Espace entre les cartes */
+    padding: 1rem;
+    scroll-snap-type: x mandatory; /* Scroll fluide */  
+}
+
+.product-card_new {
+    flex: 0 0 clamp(200px, 18vw, 280px); /* Largeur ajustée */
+    background: white;
+    border-radius: 12px;
+    padding: clamp(0.55rem, 1vw, 1.5rem); /* Padding ajusté */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    scroll-snap-align: start; /* Alignement précis au scroll */
+}
+
+.product-card_new:hover {
+    transform: scale(1.1);
+}
+
+.images_and_favoris_new {
+    position: relative;
+    border-radius: 12px;
+}
+
+.images_and_favoris_new img {
+    width: 100%;
+    border-radius: 12px;
+    height: 35vh;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.images_and_favoris_new img:hover {
+    transform: scale(1.05);
+}
+
+.images_and_favoris_new p {
+    position: absolute;
+    top: 3%;
+    left: 80%;
+    background: white;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images_and_favoris_new p button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5em;
+    transition: all 0.5s ease-in-out;
+}
+
+.images_and_favoris_new i {
+    color: grey;
+}
+
+.images_and_favoris_new i:hover {
+    color: royalblue;
+}
+
+.product-details_new {
+    margin-top: 10px;
+}
+
+.product-details_new h3 {
+    margin-bottom: 3px;
+}
+
+.product-details_new p {
+    font-size: 0.8em;
+}
+
+.add-product {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.add-product button {
+    width: 55%;
+    height: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: var(--blueColor);
+    color: var(--btnColor_1);
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+}
+
+.add-product button:hover{
+    transform: scale(1.05);
+}
+
+/* Section pour les produits en promotion */
+
+.promo-product {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-top: clamp(1rem, 3vw, 2rem);
+    /* padding-right: clamp(1rem, 3vw, 2rem); */
+}
+
+.head-promo_product {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.head-promo_product h1 {
+    background: var(--orangeColor);
+    width: clamp(120px, 20vw, 500px);
+    padding: clamp(0.5rem, 1vw, 1rem);
+    border-radius: 25px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.head-promo_product .all-promo-product {
+    cursor: pointer;
+    padding-right: 10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.head-promo_product .all-promo-product:hover {
+    text-decoration: underline;
+    transform: scale(1.02);
+}
+
+.slider-container_promo {
+    position: relative;
+    width: 100%;
+    overflow-x: auto; /* Permet le défilement horizontal */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur Edge */
+}
+
+.slider-container_promo::-webkit-scrollbar {
+    display: none; /* Cache la scrollbar sur Chrome & Safari */
+}
+
+.products-slider_promo {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); /* Espace entre les cartes */
+    padding: 1rem;
+    scroll-snap-type: x mandatory; /* Scroll fluide */  
+}
+
+.product-card_promo {
+    flex: 0 0 clamp(200px, 18vw, 280px); /* Largeur ajustée */
+    background: white;
+    border-radius: 12px;
+    padding: clamp(0.55rem, 1vw, 1.5rem); /* Padding ajusté */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    scroll-snap-align: start; /* Alignement précis au scroll */
+}
+
+.product-card_promo:hover {
+    transform: scale(1.1);
+}
+
+.images_and_favoris_promo {
+    position: relative;
+    border-radius: 12px;
+}
+
+.images_and_favoris_promo img {
+    width: 100%;
+    border-radius: 12px;
+    height: 35vh;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.images_and_favoris_promo img:hover {
+    transform: scale(1.05);
+}
+
+.images_and_favoris_promo p {
+    position: absolute;
+    top: 3%;
+    left: 80%;
+    background: white;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.images_and_favoris_promo p button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.5em;
+    transition: all 0.5s ease-in-out;
+}
+
+.images_and_favoris_promo i {
+    color: grey;
+}
+
+.images_and_favoris_promo i:hover {
+    color: royalblue;
+}
+
+.product-details_promo {
+    margin-top: 10px;
+}
+
+.product-details_promo h3 {
+    margin-bottom: 3px;
+}
+
+.product-details_promo p {
+    font-size: 0.8em;
+}
+
+.product-details_promo .add-product {
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.product-details_promo .add-product p {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.product-details_promo .add-product p .old-price {
+    text-decoration: line-through; /* Barre sur le prix original */
+    color: #888; /* Couleur grise pour le prix original */
+    font-size: 1rem; /* Taille de police plus petite pour l'ancien prix */
+}
+
+.product-details_promo .add-product p .new-price {
+    font-weight: bold;
+    color: #FF5733; /* Couleur pour le prix promo */
+    font-size: 1.2rem; /* Taille de police plus grande pour le prix promo */
+}
+
+.product-details_promo .add-product button {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: var(--blueColor);
+    color: var(--btnColor_1);
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.5s ease-in-out;
+}
+
+.product-details_promo .add-product button:hover{
+    transform: scale(1.05);
+}
+
+.badge-promo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF5733; /* Couleur de fond rouge vif */
+    color: white; /* Texte blanc */
+    padding: 0.5rem 1rem; /* Padding pour un effet plus "légèrement" arrondi */
+    border-radius: 20px; /* Bord arrondi pour un style plus moderne */
+    text-align: center; /* Centrage du texte à l'intérieur du badge */
+    z-index: 10; /* Met le badge au-dessus des autres éléments */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère pour un effet de profondeur */
+}
+
+.badge-promo::before {
+    content: "-30%"; /* Ajoute un préfixe "Promo" avant le pourcentage */
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+/* Section pour le titre principal des produits des artisans */
+.artisan{
+    display: flex;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.artisan h1 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: clamp(120px, 30vw, 400px);
+    font-size: var(--fSize_big_title);
+    background: var(--blueColor);
+}
+
+/* Style pour la carte de l'artisan */
+.best-artisan {
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-top: clamp(1rem, 3vw, 2rem);
+    /* padding-right: clamp(1rem, 3vw, 2rem); */
+}
+
+.slider-container_artisan {
+    width: 100%;
+    overflow-x: auto; /* Permet le défilement horizontal */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur Edge */
+    display: flex;
+    justify-content: center; /* Centrer l'ensemble du slider */
+}
+
+.slider-container_artisan::-webkit-scrollbar {
+    display: none; /* Cache la scrollbar sur Chrome & Safari */
+}
+
+.artisan-slider {
+    display: flex;
+    gap: clamp(10px, 2vw, 20px); /* Espace entre les cartes */
+    padding: 1rem;
+    scroll-snap-type: x mandatory; /* Scroll fluide */
+    flex-wrap: nowrap; /* Empêche le retour à la ligne */
+}
+
+.artisan-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+    flex: 0 0 auto; /* Empêche l'extension ou la réduction des cartes */
+    margin: 1rem;
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: start; /* Alignement précis au scroll */
+}
+
+.artisan-card:hover {
+    transform: translateY(-5px); /* Légère animation au survol */
+}
+
+.artisan-image {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px 0 0 10px; /* Coins arrondis uniquement à gauche */
+}
+
+.artisan-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artisan-details {
+    flex: 2;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.artisan-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.artisan-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.artisan-contact {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-view-profile {
+    background-color: var(--blueColor);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+
+.btn-view-profile:hover {
+    transform: scale(1.05);
+}
+
+/* Section pour le titre des commentaires et avis */
+.commentaire{
+    display: flex;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+.commentaire h1 {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: clamp(120px, 40vw, 700px);
+    font-size: var(--fSize_big_title);
+    background: var(--blueColor);
+}
+
+/* Style pour la section des commentaires */
+.comments-section {
+    padding: 2rem;
+}
+
+.slider-container-comments {
+    width: 100%;
+    overflow-x: auto; /* Permet le défilement horizontal */
+    overflow-y: hidden; /* Empêche le défilement vertical */
+    scrollbar-width: none; /* Cache la scrollbar sur Firefox */
+    -ms-overflow-style: none; /* Cache la scrollbar sur Edge */
+    display: flex;
+}
+
+.slider-container-comments::-webkit-scrollbar {
+    display: none; /* Cache la scrollbar sur Chrome & Safari */
+}
+
+.comments-slider {
+    display: flex;
+    gap: 1rem; /* Espacement entre les cartes */
+    padding: 1rem;
+    scroll-snap-type: x mandatory; /* Scroll fluide */
+}
+
+.comment-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 350px; /* Taille fixe pour chaque carte */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    scroll-snap-align: start;
+    flex-shrink: 0; /* Empêche la déformation de la carte */
+}
+
+.comment-card:hover {
+    transform: translateY(-5px); /* Légère animation au survol */
+}
+
+.comment-rating {
+    display: flex;
+    gap: 2px;
+    color: gold;
+}
+
+.comment-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.comment-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Réduit l'espace entre la photo et le texte */
+}
+
+.author-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Aligne les éléments à gauche (proche de la photo) */
+}
+
+.author-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.comment-date {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Styles pour l'alignement et l'animation */
+.comment-author .author-info {
+    text-align: left; /* Ajuste pour ne pas laisser d'espace inutile à droite */
+}
+
+/* Ajuste la section pour gérer plusieurs cartes sans déformation */
+.comments-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

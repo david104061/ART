@@ -1,0 +1,93 @@
+/* Style général pour le footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Conteneur global du footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Div 1 : Logo et réseaux sociaux */
+.footer-logo {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-logo-img {
+    max-width: 150px;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+
+/* Div 3 : Politique de confidentialité */
+.footer-policy {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-policy a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Div 4 : Newsletter */
+.footer-newsletter {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-newsletter form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-newsletter input {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    max-width: 300px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    background-color: #45a049;
+}
+
+/* Copyright */
+.footer-copyright {
+    background-color: #222;
+    color: #888;
+    padding: 1rem 0;
+}
+
+.footer-copyright p {
+    margin: 0;
+}

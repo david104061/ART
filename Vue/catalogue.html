@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue</title>
+  <style>
+    :root {
+      --gold: #ff0505;
+      --black: #121212;
+      --dark-gray: #080808;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--black);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url(./camer.jpg); /* dégradé du bas vers le haut */ 
+      background-repeat: no-repeat; /* Pour évter la répétition de l'image*/
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      width: 90%;
+      max-width: 1000px;
+      padding: 2rem;
+    }
+
+    .category {
+      background-color: var(--dark-gray);
+      border: 2px solid var(--gold);
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 3rem 1rem;
+      text-align: center;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: transform 0.1s ease-in-out;
+    }
+
+    .category:hover {
+      transform: scale(1.5);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .category {
+        font-size: 1.2rem;
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Ici, consultez le catalogue des articles</h1>
+
+  <div class="grid">
+    <div class="category">Vêtements</div>
+    <div class="category">Accessoires</div>
+    <div class="category">Tableaux</div>
+    <div class="category">Sculptures</div>
+    <div class="category">Meubles</div>
+    <div class="category">Tissage</div>
+    <div class="category">cuir</div>
+    <div class="category">ustensiles</div>
+  </div>
+
+</body>
+</html>

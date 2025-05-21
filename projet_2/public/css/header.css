@@ -1,0 +1,798 @@
+@import url("globals.css");
+
+:root {
+    --fSize_header: 1.2rem;
+    --fSize_link_1: 1.1rem;
+    --fSize_link_2: 2.5rem;
+    --fSize_btn: 1rem;
+
+    --linkColor_1: #1A1A1A;
+    --linkColor_2: #fff;
+    --btnColor_1: #fff;
+    --orangeColor: #FF5733;
+    --blueColor: #3366FF;
+    --hoverBtn: #FF8C66;
+    --grisColor: #F5F5F5;
+}
+
+
+.section_1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1A1A1A;
+    height: 8vh;
+}
+
+.color {
+    width: 60%;
+    background-color: var(--orangeColor);
+    clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+}
+
+
+.head {
+    padding-left: calc(8% - 1px);
+    display: flex;
+    width: 40%;
+    gap: calc(20% - 1px);
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.head nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+.head nav ul li a {
+    color: var(--linkColor_2);
+    font-size: var(--fSize_header);
+}
+
+.head nav ul li a:hover {
+    color: var(--blueColor);
+    font-weight: bold;
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+    transform: scale(1.1);
+}
+
+.head #langues {
+    outline: none;
+    width: 20vh;
+    height: 5vh;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid var(--blueColor);
+    transition: all 0.3s ease-in-out;
+    font-size: var(--fSize_header);
+}
+
+.head #langues option {
+    border-radius: 5px;
+    text-align: center;
+}
+
+#langues:hover {
+    background-color: var(--hoverBtn);
+    color: var(--btnColor_1);
+    font-weight: bold;
+}
+
+#langues:focus {
+    border-color: var(--blueColor);
+}
+
+/* Style des options */
+#langues option {
+    font-size: 14px;
+    padding: 10px;
+    background: var(--btnColor_1);
+    color: #333;
+}
+
+/* Option sélectionnée */
+#langues option:checked {
+    background-color: var(--hoverBtn);
+    color: var(--btnColor_1);
+}
+
+header {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: clamp(10px, 5%, 20px);
+    height: 12vh;
+    transition: all 0.5s ease-in-out;
+    padding: clamp(2px, 1%, 5%); /* la première valeur est la valeur minimale, le deuxième est la valeur parfaite et la troisième est la valeur maximale */
+}
+
+#header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--orangeColor);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+    z-index: 1000; /* Un grand nombre pour être au-dessus */
+}
+
+.logo {
+    width: 8%;
+}
+
+#header.sticky .logo{
+    color: var(--btnColor_1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+header .entete {
+    display: flex;
+    gap: 4%;
+    width: 92%;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    border-radius: 25px;
+    width: 350px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 40px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-input:focus {
+    border: 2px solid var(--blueColor);
+}
+
+.search-container i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.search-container i:hover {
+    color: var(--blueColor);
+    font-weight: bold;
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+.search-container .filter-icon {
+    left: 12px;
+}
+
+.search-container .search-icon {
+    right: 12px;
+}
+
+header .entete nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+header .entete nav ul li a {
+    position: relative;
+    color: var(--linkColor_1);
+    font-size: var(--fSize_link_1);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0;
+}
+
+#header.sticky .entete nav ul li a {
+    color: var(--btnColor_1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+header .entete nav ul li a::before,
+header .entete nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0%; /* on masque le trait au debut */
+    height: 3px;
+    background-color: var(--blueColor); /* Couleur du soulignement */
+    transition: width 0.3s ease-in-out;
+}
+
+
+header .entete nav ul li a:hover::after { 
+    bottom: 0; /* trait en dessous */
+}
+
+header .entete nav ul li a:hover::before { 
+    top: 0; /* trait en dessus */
+}
+
+header .entete nav ul li a:hover::after,
+header .entete nav ul li a:hover::after { /* La ligne s'étant de la gauche vers la droite  avec (width 100%) */
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+header .entete .join-container {
+    display: flex;
+    gap: 3vh;
+}
+
+header .entete .join-container .shop-icon {
+    color: var(--linkColor_1);
+    font-size: var(--fSize_link_2);
+}
+
+header .entete .join-container .shop-icon:hover {
+    color: var(--blueColor);
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#header.sticky .entete .join-container .shop-icon {
+    color: var(--btnColor_1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#header.sticky .entete .join-container .shop-icon:hover {
+    color: var(--blueColor);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+.join-container button {
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vh;
+    outline: none;
+    border: none;
+    gap: 10px;
+    font-size: var(--fSize_btn);
+    font-weight: bold;
+}
+
+.btn-signin {
+    background: var(--orangeColor);
+    border: none;
+    color: var(--btnColor_1);
+}
+
+.btn-signin:hover {
+    background-color: var(--hoverBtn);
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#header.sticky .btn-signin {
+    background: var(--blueColor);
+    color: var(--linkColor_2);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+.my-accound {
+    background: var(--orangeColor);
+    border: none;
+    color: var(--btnColor_1);
+}
+
+.my-accound:hover {
+    background-color: var(--hoverBtn);
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#header.sticky .my-accound {
+    background: var(--blueColor);
+    color: var(--linkColor_2);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+
+.btn-signup {
+    background: var(--blueColor);
+    color: var(--linkColor_2);
+}
+
+.btn-signup:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#header.sticky .btn-signup {
+    background-color: var(--grisColor);
+    border: 2px solid var(--blueColor);
+    color: var(--blueColor);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+.disconnect {
+    background: var(--blueColor);
+    color: var(--linkColor_2);
+}
+
+.disconnect:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#header.sticky .disconnect {
+    background-color: var(--grisColor);
+    border: 2px solid var(--blueColor);
+    color: var(--blueColor);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+#hamburger-menu_1 {
+    display: none;
+}
+
+/* Rendre le header responsive. */
+@media (max-width: 600px) { /* Style pour les petits écrans. */
+
+    .section_1 {
+        display: none;
+    }
+
+    #entete {
+        display: none; /* Masque tout le menu */
+        position: absolute;
+    }
+
+    #entete.open-close {
+        display: flex; /* Masque tout le menu */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 12%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.3); /* Fond semi-transparent */
+        backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+        -webkit-backdrop-filter: blur(10px); /* Support pour Safari */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce autour du menu */
+        z-index: 1000; /* Pour afficher le menu au-dessus de tout le reste */
+    }
+
+    #header.sticky .entete.open-close {
+        top: 12%; /* Remettre la position par défaut si nécessaire */
+        position: fixed; /* Rester fixé en haut */
+    }
+
+    #entete.open-close  nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #entete.open-close a {
+        font-size: 1.5rem;
+        color: var(--linkColor_2);
+    }
+
+    #entete.open-close .join-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #entete.open-close .join-container a i {
+        color: var(--linkColor_2);
+        font-size: 4rem;
+    }
+
+    #entete.open-close .join-container .shop-icon:hover {
+        color: var(--blueColor);
+        transform: scale(1.1);
+        transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+    }
+
+    #hamburger-menu { /* on affiche le menu hamburger */
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    #entete.open-close .search-container {
+        width: 100%;
+    }
+
+    #entete.open-close .join-container {
+        text-align: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    #entete.open-close .join-container button {
+        height: 5vh;
+    }
+
+    #header {
+        display: flex;
+        padding: 0 20px;
+        border: 1px solid #ccc;
+        justify-content: space-between;
+    }
+
+    #header.sticky {
+        color: var(--linkColor_2);
+    }
+}
+
+@media (max-width: 1200px) {
+
+    #section_1 {
+        width: 100%;
+    }
+
+    #section_1 .color {
+        width: 40%;
+    }
+
+    #section_1 .head {
+        display: flex;
+        gap: 10%;
+        width: 60%;
+        justify-content: center;
+    }
+
+    #header .logo {
+        margin-right: 15%;
+    }
+
+    #entete {
+        display: none; /* Masque tout le menu */
+        position: absolute;
+    }
+
+    #entete.open-close {
+        display: flex; /* Masque tout le menu */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 12%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.3); /* Fond semi-transparent */
+        backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+        -webkit-backdrop-filter: blur(10px); /* Support pour Safari */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce autour du menu */
+        z-index: 1000; /* Pour afficher le menu au-dessus de tout le reste */
+    }
+
+    #header.sticky .entete.open-close {
+        top: 12%; /* Remettre la position par défaut si nécessaire */
+        position: fixed; /* Rester fixé en haut */
+    }
+
+    #entete.open-close  nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #entete.open-close a {
+        font-size: 1.5rem;
+        color: var(--linkColor_2);
+    }
+
+    #entete.open-close .join-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #entete.open-close .join-container a i {
+        color: var(--linkColor_2);
+        font-size: 4rem;
+    }
+
+    #entete.open-close .join-container .shop-icon:hover {
+        color: var(--blueColor);
+        transform: scale(1.1);
+        transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+    }
+
+    #hamburger-menu { /* on affiche le menu hamburger */
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    #entete.open-close .search-container {
+        width: 60%;
+    }
+
+    #entete.open-close .join-container {
+        text-align: center;
+        width: 100%;
+        align-items: center;
+    }
+
+    #entete.open-close .join-container button {
+        height: 5vh;
+    }
+
+    #header {
+        display: flex;
+        padding: 0 20px;
+        border: 1px solid #ccc;
+        justify-content: space-between;
+    }
+
+    #header.sticky {
+        color: var(--linkColor_2);
+    }
+
+}
+
+
+/* Formulaire de connexion, d'inscription et de récupération de mot de passe */
+.form-container {
+    display: none;
+    justify-content: space-between;
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour faire ressortir l'élément */
+
+    /* Transparent et effet de glace */
+    background: rgba(255, 255, 255, 0.1); /* Arrière plan semi transparent */
+    backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+    -webkit-backdrop-filter: blur(1px); /* Support pour Safari */  
+    padding: 20px;
+}
+
+form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1); /* Arrière plan semi transparent */
+    border: 1px solid var(--blueColor); /* Bordure blanche */
+    border-radius: 10px; /* Coins arrondis pour un effet plus doux */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Ombre pour faire ressortir l'élément */
+
+    /* Transparent et effet de glace */
+    background: rgba(255, 255, 255, 0.2); /* Arrière plan semi transparent */
+    backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+    -webkit-backdrop-filter: blur(10px); /* Support pour Safari */  
+    padding: 30px;
+    transition: all 0.3s ease, box-shadow 0.3s ease; /* Animation pour un effet interactif */
+}
+
+.hidden {
+    display: none;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-container .input {
+    width: 100%;
+    padding: 10px;
+    padding-left: 5px; /* Pour effiter le label de se coller sur cette bordure gauche */
+    border: 2px solid var(--blueColor);
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    padding-left: 5px; /* Pour effiter le label de se coller sur cette bordure gauche */
+    border: 2px solid var(--blueColor);
+    border-radius: 5px;
+    background: transparent;
+    outline: none;
+}
+
+.input-container .label-form {
+    position: absolute;
+    top: 50%; /* Centrer verticalement le label */
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: black;
+    pointer-events: none; /* Empêche l'intéraction du label */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Quand l'input est focus ou rempli, on deplace le label */
+.input:focus + .label-form,
+.input:valid + .label-form {
+    top: 0;
+    font-size: 14px;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-weight: bold;
+    color: black; /* couleur du label quand il est actif */
+    border-radius: 3px; /* Coins arrondis pour un effet plus doux */
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8),
+                0 2px 10px rgba(0, 0, 0, 0.3); /* Ombre pour faire ressortir l'élément */
+
+    /* Transparent et effet de glace */
+    background: rgba(255, 255, 255, 0.2); /* Arrière plan semi transparent */
+    backdrop-filter: blur(10px); /* Flou de l'arrière-plan */
+    -webkit-backdrop-filter: blur(10px); /* Support pour Safari */  
+    transition: all 0.3s ease, box-shadow 0.3s ease; /* Animation pour un effet interactif */
+}
+
+form .main-btn {
+    width: 100%;
+    height: 5vh;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: var(--btnColor_1);
+    background: var(--blueColor);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+form button i {
+    margin-right: 10px;
+}
+
+form .other-btn {
+    background: transparent;
+    border: 2px solid var(--blueColor);
+}
+
+form .main-btn:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out; /* Ajoute un effet fluide */
+}
+
+form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: var(--fSize_link_2);
+    color: black;
+    font-weight: bolder;
+}
+
+form a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    transition: all 0.5s ease-in-out;
+}
+
+form a:hover {
+    text-decoration: underline;
+    transition: all 0.3s ease-in-out;
+    color: var(--blueColor);
+}
+
+.lost-past {
+    display: flex;
+    justify-content: space-between;
+}
+
+.choise-login {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.choise-login::before,
+.choise-login::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ccc;
+}
+
+.separator {
+    padding: 0 10px;
+}
+
+form p a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: var(--grisColor);
+    cursor: pointer;
+}
+
+#reset-form {
+    display: none; /* Masque le formulaire de récupération de mot de passe */
+}
+
+#signup-form {
+    display: none; /* Masque le formulaire d'inscription */
+}
+
+#back {
+    display: flex; /* Masque le bouton de retour */
+    position: absolute;
+    top: 1%;
+    left: 5px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#back:hover {
+    transform: scale(1.1);
+    color: var(--blueColor);
+}
+
+@media (max-width: 600px) {
+
+    .message {
+        display: none;
+    }
+
+    #form-container {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Style des champs valides et invalides */
+.input.valid {
+    border-color: green;
+}
+
+.input.invalid {
+    border-color: red;
+}
+
+.input.medium {
+    border-color: yellow;
+}
+
+/* Style des messages d'erreur */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 25px;
+}
+
+/* Style du bouton d'affichage du mot de passe */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: clamp(0.5vh, 10vh, 2vh);
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: black;
+}

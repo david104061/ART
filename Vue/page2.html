@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue Produits</title>
+
+  <!-- 🎨 STYLES CSS INTERNES -->
+  <style>
+    :root {
+      --gold: #ff0000;
+      --black: #000000;
+      --white: #ffffff;
+      --dark-gray: #020101;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    header {
+      background-color: var(--dark-gray);
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .search-bar input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 20px;
+      border: 1px solid var(--gold);
+      background-color: transparent;
+      color: var(--white);
+      width: 220px;
+    }
+
+    .search-bar input::placeholder {
+      color: #aaa;
+    }
+
+    .catalogue-button {
+      background-color: var(--gold);
+      color: var(--black);
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .product-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .product-card {
+      background-color: var(--dark-gray);
+      border: 1px solid #fc0303;
+      border-radius: 15px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .product-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .product-avatar {
+      width: 50px;
+      height: 50px;
+      background-color: #444;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      color: #ffffff;
+      margin-right: 1rem;
+    }
+
+    .product-username {
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .product-image,
+    .product-image2,
+    .product-image3 {
+      width: 100%;
+      background-color: #333;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .product-image {
+      height: 300px;
+    }
+
+    .product-image2 {
+      height: 300px;
+      flex-direction: row;
+    }
+
+    .product-image3 {
+      height: 300px;
+    }
+
+    .taille {
+      width: 300px;
+      height: 300px;
+      border-radius: 50px;
+      margin-left: 10px;
+    }
+
+    img {
+      border-radius: 15px;
+    }
+
+    .product-description {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #ddd;
+    }
+
+    @media (max-width: 600px) {
+      .search-bar input {
+        width: 140px;
+      }
+
+      .product-image {
+        height: 180px;
+      }
+    }
+    .nav-buttons a {
+      width: 200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(133, 4, 4);
+      color: rgb(252, 248, 234);
+      text-decoration: none;
+      font-size: 1.2em;
+      font-weight: bold;
+      border-radius: 20px;
+      transition: transform 0.3s, background-color 0.3s;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔝 EN-TÊTE -->
+  <header>
+    <div class="search-bar">
+      <input type="text" placeholder="🔍 Rechercher un produit..." />
+    </div>
+    <div class="nav-buttons">
+      <a href="catalogue.html">catalogue</a>
+      
+    </div>
+    <!--<button class="catalogue-button">Catalogue
+      <a href="catalogue.html"></a>
+    </button>-->
+  </header>
+
+  <!-- 🖼️ LISTE DES PRODUITS -->
+  <main class="product-list">
+
+    <!-- 🧱 PRODUIT 1 -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-avatar">Profil</div>
+        <div class="product-username">Mr.Ninho</div>
+      </div>
+      <div class="product-image">
+        <div class="taille"><img src="./sac.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./sac.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./sac.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./sac.jpg" alt="sac" width="280" height="300"></div>
+      </div>
+      <div class="product-description">
+        <strong>Sac a dos </strong><br/>
+        Un magnifique sac a dos fait a base de tissu traditionel camerounais avec une precision dans chaque detailles.
+      </div>
+    </div>
+
+    <!-- 🧱 PRODUIT 2 -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-avatar">Profil</div>
+        <div class="product-username">Mr.Corleone</div>
+      </div>
+      <div class="product-image2">
+        <div class="taille"><img src="./f1.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./f1.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./f1.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./f1.jpg" alt="sac" width="280" height="300"></div><!-- Tu peux ajouter des <img> ici si nécessaire -->
+      </div>
+      <div class="product-description">
+        <strong>Sac en cuir noir</strong><br/>
+        Élégant et robuste, ce sac est conçu pour durer. Fabriqué avec du cuir local de qualité supérieure.
+      </div>
+    </div>
+
+    <!-- 🧱 PRODUIT 3 -->
+    <div class="product-card">
+      <div class="product-header">
+        <div class="product-avatar">Profil</div>
+        <div class="product-username">Mr.Tjay</div>
+      </div>
+      <div class="product-image3">
+        <div class="taille"><img src="./sculture.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./sculture.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./sculture.jpg" alt="sac" width="300" height="300"></div>
+        <div class="taille"><img src="./sculture.jpg" alt="sac" width="280" height="300"></div><!-- Ajoute ici une image si besoin -->
+      </div>
+      <div class="product-description">
+        <strong>Montre artisanale dorée</strong><br/>
+        Une pièce unique combinant tradition horlogère et élégance dorée. Disponible en édition limitée.
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>
