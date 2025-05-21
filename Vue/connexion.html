@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Connexion</title>
+  <style>
+    :root {
+      --gold: #d4af37;
+      --black: #121212;
+      --pink: #ff69b4;
+      --dark-pink: #c71585;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, var(--black), var(--dark-pink));
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-container {
+      background-color: rgba(18, 18, 18, 0.95);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      border: 2px solid var(--gold);
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--pink);
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: 1px solid var(--gold);
+      background-color: #1e1e1e;
+      color: var(--gold);
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--pink);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.8rem;
+      background-color: var(--gold);
+      color: var(--black);
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--pink);
+      color: var(--black);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .footer a {
+      color: var(--pink);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Connexion</h2>
+    <form>
+      <div class="form-group">
+        <label for="email">Adresse Email</label>
+        <input type="email" id="email" placeholder="exemple@mail.com" required />
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="••••••••" required />
+      </div>
+      <button type="submit" class="submit-btn">Se connecter</button>
+    </form>
+
+    <!-- Onglet de création de compte -->
+    <div class="footer">
+      Vous n'avez pas de compte ? <a href="creation.html">Créez ici</a>
+    </div>
+  </div>
+
+</body>
+</html>

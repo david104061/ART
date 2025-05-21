@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Créer un compte</title>
+  <style>
+    :root {
+      --gold: #d4af37;
+      --black: #121212;
+      --pink: #ff69b4;
+      --dark-pink: #c71585;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, var(--black), var(--dark-pink));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: rgba(18, 18, 18, 0.95);
+      border: 2px solid var(--gold);
+      padding: 2rem;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--gold);
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--pink);
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      border-radius: 10px;
+      border: 1px solid var(--gold);
+      background-color: #1e1e1e;
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--pink);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: var(--gold);
+      color: var(--black);
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--pink);
+      color: var(--black);
+    }
+
+    .footer {
+      margin-top: 1.5rem;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .footer a {
+      color: var(--pink);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Créer un compte</h2>
+    <form>
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input type="text" id="username" placeholder="Votre nom d'utilisateur" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Adresse Email</label>
+        <input type="email" id="email" placeholder="exemple@email.com" required>
+      </div>
+      <!--<div class="form-group">
+        <label for="address">Adresse physique</label>
+        <input type="text" id="address" placeholder="Votre adresse complète" required>
+      </div>-->
+      <div class="form-group">
+        <label for="dob">Date de naissance</label>
+        <input type="date" id="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="Choisissez un mot de passe" required>
+      </div>
+      <button type="submit" class="submit-btn">Créer mon compte</button>
+    </form>
+
+    <div class="footer">
+      Vous avez déjà un compte ? <a href="connexion.html">Connectez-vous</a>
+    </div>
+  </div>
+
+</body>
+</html>
